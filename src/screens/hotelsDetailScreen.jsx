@@ -147,8 +147,10 @@ const HotelsDetailScreen = ({ route }) => {
           <Text style={styles.totalPriceNights}>4 Nuits</Text>
         </View>
 
-        <TouchableOpacity style={styles.chooseRoomsButton}>
-          <Text style={styles.chooseRoomsButtonText}>Résever</Text>
+        <TouchableOpacity style={styles.chooseRoomsButton}
+        onPress={() => navigation.navigate("Choose")}
+        >
+          <Text style={styles.chooseRoomsButtonText}>Choisir Une Chambre</Text>
         </TouchableOpacity>
       </View>
     </ScrollView>
@@ -326,7 +328,7 @@ header: {
   chooseRoomsButtonText: {
     color: '#fff',
     fontSize: 18,
-    fontWeight: 'bold',
+    fontWeight: '400',
   },
 });
 

@@ -5,11 +5,12 @@ import { Ionicons } from '@expo/vector-icons';
 
 // Import screens
 import HomeScreen from '../screens/HomeScreen';
-import SearchScreen from '../screens/SearchScreen';
+
 import SejourScreen from '../screens/SejourScreen';
 import FavoriteScreen from '../screens/FavoriteScreen';
 import ProfilScreen from '../screens/ProfilScreen';
 import Colors from '../constants/colors';
+import HotelSearchScreen from '../screens/HotelSearchScreen';
 
 const Tab = createBottomTabNavigator();
 
@@ -65,7 +66,7 @@ const TabNavigator = () => {
       })}
     >
       <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Recherche" component={SearchScreen} />
+      <Tab.Screen name="Recherche" component={HotelSearchScreen} />
       <Tab.Screen name="Sejour" component={SejourScreen} />
       <Tab.Screen name="Favorite" component={FavoriteScreen} />
       <Tab.Screen name="Profil" component={ProfilScreen} />

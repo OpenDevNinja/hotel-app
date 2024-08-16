@@ -1,6 +1,7 @@
 import React from 'react';
 import { View, Text, Image, StyleSheet, TouchableOpacity } from 'react-native';
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons,Feather } from '@expo/vector-icons';
+
 import Colors from '../constants/colors';
 
 const HotelCard = ({ name, price, rating, reviews, image, onPress }) => (
@@ -19,7 +20,9 @@ const HotelCard = ({ name, price, rating, reviews, image, onPress }) => (
       </View>
     </View>
     <View style={styles.bookButton}>
-      <Text style={styles.bookButtonText}>Réserver </Text>
+      <Text style={styles.bookButtonText}>
+      <Feather name="arrow-right" size={22} color="#fff" />
+         </Text>
     </View>
   </TouchableOpacity>
 );
@@ -72,7 +75,7 @@ const styles = StyleSheet.create({
       position: 'absolute',
       right: 15,
       bottom: 15,
-      backgroundColor: Colors.color_blue,
+      backgroundColor: Colors.color_jaune,
       paddingHorizontal: 15,
       paddingVertical: 8,
       borderRadius: 5,

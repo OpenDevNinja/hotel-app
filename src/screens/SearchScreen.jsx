@@ -13,7 +13,7 @@ const SearchScreen = () => {
       <SafeAreaView style={styles.container}>
         <View style={styles.header}>
 
-          <TextInput style={styles.searchBar} placeholder="New York" />
+          <TextInput style={styles.searchBar} placeholder="Bénin, Cotonou" />
           <TouchableOpacity style={styles.searchButton}>
             <Icon name="search" size={24} color="#fff" />
           </TouchableOpacity>

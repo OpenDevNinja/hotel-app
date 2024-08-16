@@ -4,7 +4,6 @@ import Icon from 'react-native-vector-icons/MaterialIcons';
 import Icons from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import FontAwesome6 from 'react-native-vector-icons/FontAwesome6';
-import StatusBarSeparator from '../components/StatusBarSeparator';
 import { Ionicons } from '@expo/vector-icons';
 import Colors from '../constants/colors';
 const screenWidth = Dimensions.get('window').width;
