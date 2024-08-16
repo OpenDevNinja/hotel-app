@@ -234,7 +234,7 @@ const styles = StyleSheet.create({
     },
     checkboxLabel: {
         color: '#333',
-        fontSize: 14,
+        fontSize: 13,
     },
     payButton: {
         backgroundColor: '#2a5298',

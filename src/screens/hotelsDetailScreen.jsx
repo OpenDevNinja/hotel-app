@@ -118,8 +118,10 @@ const HotelsDetailScreen = ({ route }) => {
               <Text style={styles.amenityText}>Parking</Text>
             </View>
           </View>
-          <TouchableOpacity style={styles.seeAllButton}>
-            <Text style={styles.seeAllText}>Voir tous les équipements</Text>
+          <TouchableOpacity
+          onPress={() => navigation.navigate('Facilities')}
+          style={styles.seeAllButton}>
+            <Text style={styles.seeAllText}>Voir Plus</Text>
             <Ionicons name="chevron-forward" size={24} color={Colors.color_white}
               style={{ backgroundColor: Colors.color_blue, padding: 5, borderRadius: 5 }} />
           </TouchableOpacity>
@@ -262,7 +264,7 @@ header: {
   seeAllText: {
     color: Colors.color_blue,
     marginRight: 5,
-    fontWeight: "800",
+    fontWeight: "400",
     fontSize: 20,
     marginTop: 10,
 

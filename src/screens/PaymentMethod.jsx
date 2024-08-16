@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView } from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity, SafeAreaView, Image } from 'react-native';
 import { RadioButton } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
@@ -15,25 +15,25 @@ const PaymentMethod = () => {
 
     const paymentMethods = [
         { id: 'creditCard', label: 'Credit Card', icon: 'credit-card', iconType: 'material' },
-        { id: 'internetBanking', label: 'Internet Banking', icon: 'bank', iconType: 'material' },
+        { id: 'internetBanking', label: 'Virement Bancaire ', icon: 'bank', iconType: 'material' },
         { id: 'paypal', label: 'PayPal', icon: 'paypal', iconType: 'fontawesome' },
-        { id: 'mtn', label: 'Mtn', icon: 'paypal', iconType: 'fontawesome' },
-        { id: 'moov', label: 'Moov', icon: 'paypal', iconType: 'fontawesome' },
-        { id: 'celtis', label: 'Celtis', icon: 'paypal', iconType: 'fontawesome' },
+        { id: 'mtn', label: 'MTN', image: require('../assets/mtn.png') },
+        { id: 'moov', label: 'Moov', image: require('../assets/moov.png') },
+        { id: 'celtis', label: 'Celtis', image: require('../assets/celtis.jpg') },
     ];
 
     const renderIcon = (method) => {
-        if (method.iconType === 'fontawesome') {
+        if (method.image) {
+            return <Image source={method.image} style={styles.iconImage} />;
+        } else if (method.iconType === 'fontawesome') {
             return <FontAwesome name={method.icon} size={24} color={Colors.color_blue} style={styles.icon} />;
         }
         return <Icon name={method.icon} size={24} color={Colors.color_blue} style={styles.icon} />;
     };
-   
 
     const handleGoBack = () => {
         navigation.goBack();
     };
-
 
     return (
         <>
@@ -46,9 +46,7 @@ const PaymentMethod = () => {
                     <Text style={styles.headerTitleTop}>Mode de paiement</Text>
                 </View>
                 <View style={styles.content}>
-
                     <Text style={styles.subtitle}>Sélectionnez l'un des modes de paiement</Text>
-
                     {paymentMethods.map((method) => (
                         <TouchableOpacity
                             key={method.id}
@@ -61,14 +59,14 @@ const PaymentMethod = () => {
                                 onPress={() => setSelectedMethod(method.id)}
                                 color="#007AFF"
                             />
-                            {renderIcon(method)}
+                            <View style={styles.iconContainer}>
+                                {renderIcon(method)}
+                            </View>
                             <Text style={styles.methodLabel}>{method.label}</Text>
                         </TouchableOpacity>
                     ))}
                 </View>
-                <View style={{  padding: 15,}}>
-
-
+                <View style={{ padding: 15 }}>
                     <Button
                         title="Suivant"
                         onPress={() => navigation.navigate('Credit')}
@@ -79,6 +77,7 @@ const PaymentMethod = () => {
         </>
     );
 };
+
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -87,6 +86,22 @@ const styles = StyleSheet.create({
     content: {
         flex: 1,
         padding: 20,
+    },
+    iconContainer: {
+        width: 24,
+        height: 24,
+        justifyContent: 'center',
+        alignItems: 'center',
+        marginRight: 10,
+    },
+    icon: {
+        width: 24,
+        height: 24,
+    },
+    iconImage: {
+        width: 30,
+        height: 30,
+        resizeMode: 'contain',
     },
     title: {
         fontSize: 24,
@@ -97,7 +112,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         alignItems: 'center',
         padding: 10,
-
     },
     backButtonTop: {
         marginRight: 16,
@@ -122,23 +136,8 @@ const styles = StyleSheet.create({
         padding: 15,
         marginBottom: 10,
     },
-    icon: {
-        marginRight: 10,
-    },
     methodLabel: {
         fontSize: 16,
-    },
-    nextButton: {
-        backgroundColor: '#007AFF',
-        padding: 15,
-        alignItems: 'center',
-        margin: 20,
-        borderRadius: 10,
-    },
-    nextButtonText: {
-        color: 'white',
-        fontSize: 18,
-        fontWeight: 'bold',
     },
     signInButton: {
         width: '100%',

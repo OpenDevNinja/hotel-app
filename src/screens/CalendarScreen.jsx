@@ -61,8 +61,8 @@ const DatePicker = () => {
         return (
             <View style={styles.calendar}>
                 <View style={styles.weekDays}>
-                    {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map(day => (
-                        <Text key={day} style={styles.weekDay}>{day}</Text>
+                    {['Di', 'Lu', 'Ma', 'Me', 'Je', 'Ve', 'Sa'].map((day, index) => (
+                        <Text key={index} style={styles.weekDay}>{day}</Text>
                     ))}
                 </View>
                 <View style={styles.days}>
@@ -311,7 +311,7 @@ const styles = StyleSheet.create({
     signInButton: {
         marginTop: 55,
         marginHorizontal: 6,
-       
+
     },
 });
 

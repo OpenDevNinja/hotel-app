@@ -23,6 +23,7 @@ import SejourScreen from '../screens/SejourScreen';
 import SortByScreen from '../screens/SortByScreen';
 import FilterScreen from '../screens/FilterScreen';
 import SortByMapScreen from '../screens/SortByMapScreen';
+import FacilitiesScreen from '../screens/FacilitiesScreen';
 
 
 const Stack = createStackNavigator();
@@ -51,7 +52,7 @@ const Navigators = () => {
                 <Stack.Screen name="SortBy" component={SortByScreen} />
                 <Stack.Screen name="Filtre" component={FilterScreen} />
                 <Stack.Screen name="MapFiltre" component={SortByMapScreen} />
-                
+                <Stack.Screen name="Facilities" component={FacilitiesScreen} />
 
                 
 
