@@ -10,13 +10,16 @@ import { useNavigation } from '@react-navigation/native';
 import Button from '../components/Button';
 
 const PaymentMethod = () => {
-
+    const navigation = useNavigation()
     const [selectedMethod, setSelectedMethod] = useState('creditCard');
 
     const paymentMethods = [
         { id: 'creditCard', label: 'Credit Card', icon: 'credit-card', iconType: 'material' },
         { id: 'internetBanking', label: 'Internet Banking', icon: 'bank', iconType: 'material' },
         { id: 'paypal', label: 'PayPal', icon: 'paypal', iconType: 'fontawesome' },
+        { id: 'mtn', label: 'Mtn', icon: 'paypal', iconType: 'fontawesome' },
+        { id: 'moov', label: 'Moov', icon: 'paypal', iconType: 'fontawesome' },
+        { id: 'celtis', label: 'Celtis', icon: 'paypal', iconType: 'fontawesome' },
     ];
 
     const renderIcon = (method) => {
@@ -25,7 +28,7 @@ const PaymentMethod = () => {
         }
         return <Icon name={method.icon} size={24} color={Colors.color_blue} style={styles.icon} />;
     };
-    const navigation = useNavigation()
+   
 
     const handleGoBack = () => {
         navigation.goBack();
@@ -68,7 +71,7 @@ const PaymentMethod = () => {
 
                     <Button
                         title="Suivant"
-                        onPress={() => navigation.navigate('Verification')}
+                        onPress={() => navigation.navigate('Credit')}
                         style={styles.signInButton}
                     />
                 </View>

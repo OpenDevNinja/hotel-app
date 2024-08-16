@@ -5,8 +5,11 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import HotelScreen from './HotelScreen'
 import StatusBarSeparator from '../components/StatusBarSeparator';
 import Colors from '../constants/colors';
+import { useNavigation } from '@react-navigation/native';
 
 const SearchScreen = () => {
+  const navigation = useNavigation();
+  
   return (
     <>
       <StatusBarSeparator />
@@ -19,15 +22,21 @@ const SearchScreen = () => {
           </TouchableOpacity>
         </View>
         <View style={styles.filterBar}>
-          <TouchableOpacity style={styles.filterButton}>
+          <TouchableOpacity
+                   onPress={() =>  navigation.navigate('Filtre')}
+          style={styles.filterButton}>
             <Icon name="options-outline" size={18} color="#000" />
-            <Text style={styles.filterText}>Filter</Text>
+            <Text style={styles.filterText}>Filtre</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.filterButton}>
+          <TouchableOpacity
+           onPress={() =>  navigation.navigate('SortBy')}
+          style={styles.filterButton}>
             <Icon name="swap-vertical-outline" size={18} color="#000" />
             <Text style={styles.filterText}>Sort</Text>
           </TouchableOpacity>
-          <TouchableOpacity style={styles.filterButton}>
+          <TouchableOpacity
+            onPress={() =>  navigation.navigate('MapFiltre')}
+          style={styles.filterButton}>
             <Icon name="map-outline" size={18} color="#000" />
             <Text style={styles.filterText}>Map</Text>
           </TouchableOpacity>

@@ -13,7 +13,7 @@ const ReserverNow = () => {
     const [phone, setPhone] = useState('');
     const [checkIn, setCheckIn] = useState('20 Feb-25 Feb');
     const [checkOut, setCheckOut] = useState('20 Feb-25 Feb');
-    const navigation =useNavigation()
+    const navigation = useNavigation()
 
     const handleGoBack = () => {
         navigation.goBack();
@@ -30,7 +30,7 @@ const ReserverNow = () => {
                     <Text style={styles.headerTitleTop}>Réservation</Text>
                 </View>
                 <ScrollView style={styles.container}>
-                 
+
                     <View style={styles.inputGroup}>
                         <View style={styles.inputWrapper}>
                             <Icon name="person-outline" size={20} color={Colors.color_gray} style={styles.inputIcon} />
@@ -81,7 +81,7 @@ const ReserverNow = () => {
                         </View>
                     </View>
 
-                  
+
 
                     <View style={styles.paymentDetails}>
                         <Text style={styles.sectionTitle}>Détails du paiement</Text>
@@ -103,9 +103,9 @@ const ReserverNow = () => {
                         </View>
                     </View>
 
-                    <TouchableOpacity 
-                     onPress={() => navigation.navigate('PayMethod')}
-                    style={styles.paymentButton}>
+                    <TouchableOpacity
+                        onPress={() => navigation.navigate('PayMethod')}
+                        style={styles.paymentButton}>
                         <Text style={styles.paymentButtonText}>Payer maintenant</Text>
                     </TouchableOpacity>
                 </ScrollView>
